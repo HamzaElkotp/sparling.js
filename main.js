@@ -1,61 +1,27 @@
-
-function jsonRead(jsonpages, event){
+function jsonRead(jsonpages, metatagFunc){
     let xhr = fetch(jsonpages);
     xhr.then((res)=>{
         return res.json()
     }).then((data)=>{
-        console.log(data)
         return data
     }).then((data)=>{
-        event
-    })
-    
+        function evenAdder(){
+            let elements = document.querySelectorAll('[SPAname]');
+            elements.forEach((ele, index)=>{
+                ele.addEventListener('click',()=>{
+                    document.title = data[index].SPAtitle;
+                    window.history.pushState("","",data[index].SPAurl);
+                })
+            })
+        }
+        evenAdder(metatagFunc);
+    });
 }
-jsonRead("spa.json",eventAdder("SPAname", "SPAurl", "SPAtitle"));
 
-
-function eventAdder(SPAnameKeyName, urlKeyName, titleKeyName){
+function metaTags(SPAnameKeyName, urlKeyName, titleKeyName){
     let SPAname = SPAnameKeyName;
     let SPAurl = urlKeyName;
     let SPAtitle = titleKeyName;
-    let elements = document.querySelectorAll('[SPAname]')
-    elements.forEach((ele)=>{
-        ele.addEventListener('click',()=>{
-            // document.title = data
-        })
-    })
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+jsonRead("spa.json",metaTags("SPAname", "SPAurl", "SPAtitle"));
