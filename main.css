@@ -1,0 +1,55 @@
+html,body {
+    height:100%;
+   }
+body{
+    position: sticky;
+    top: 0;
+}
+
+:root{
+    --bgColor: #111111;
+    --input: #ffffff;
+    --output: #00ffcc;
+    --inpArea: #1d1d1d;
+}
+
+.sideBar{
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.columns:not(:last-child){
+    margin-bottom: 0 !important;
+}
+
+.menu-list a.is-active.is-primary{
+    background-color: #00d1b2 !important;
+}
+
+.menu-list a{
+    color: #fff !important;
+    margin-bottom: 10px;
+}
+
+.menu-list a:not(.is-primary):hover{
+    background-color: #050505 !important;
+    opacity: 0.8;
+    transition: all 0.3s ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
