@@ -26,7 +26,11 @@ function jsonRead(jsonpages, metatagArr){
                         }
                     })
 
+                    elements.forEach((eles)=>{
+                        eles.classList.remove("is-active", "is-primary");
+                    })
                     
+                    ele.classList.add("is-active", "is-primary")
                 })
             })
         }
