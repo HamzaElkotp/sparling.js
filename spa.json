@@ -1,13 +1,5 @@
 [
     {
-        "SPAnameR" : "home",
-        "SPAurlR": "../",
-        "SPAtitleR": "SPA APP | My Logic",
-        "Body": {
-
-        }
-    },
-    {
         "SPAnameR" : "customers",
         "SPAurlR": "customers",
         "SPAtitleR": "Customers",
@@ -23,6 +15,15 @@
             
         }
     },
+    {
+        "SPAnameR" : "home",
+        "SPAurlR": "../",
+        "SPAtitleR": "SPA APP | My Logic",
+        "Body": {
+
+        }
+    },
+    
     {
         "SPAnameR" : "notifications",
         "SPAurlR": "notifications",
