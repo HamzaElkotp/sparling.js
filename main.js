@@ -1,4 +1,4 @@
-function jsonRead(jsonpages, metatagFunc){
+function jsonRead(jsonpages, metatagArr){
     let xhr = fetch(jsonpages);
     xhr.then((res)=>{
         return res.json()
@@ -6,22 +6,26 @@ function jsonRead(jsonpages, metatagFunc){
         return data
     }).then((data)=>{
         function evenAdder(){
+
+            let SPAname = metatagArr[0];
+            let SPAurl = metatagArr[1];
+            let SPAtitle = metatagArr[2];
+
             let elements = document.querySelectorAll('[SPAname]');
             elements.forEach((ele, index)=>{
                 ele.addEventListener('click',()=>{
-                    document.title = data[index].SPAtitle;
-                    window.history.pushState("","",data[index].SPAurl);
+                    document.title = data[index][SPAtitle];
+                    window.history.pushState("","",data[index][SPAurl]);
                 })
             })
         }
-        evenAdder(metatagFunc);
+        evenAdder();
     });
 }
 
-function metaTags(SPAnameKeyName, urlKeyName, titleKeyName){
-    let SPAname = SPAnameKeyName;
-    let SPAurl = urlKeyName;
-    let SPAtitle = titleKeyName;
-}
+jsonRead("spa.json",["SPAnameR", "SPAurlR", "SPAtitleR"]);
 
-jsonRead("spa.json",metaTags("SPAname", "SPAurl", "SPAtitle"));
+
+
+
+

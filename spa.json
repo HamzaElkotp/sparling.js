@@ -1,32 +1,32 @@
 [
     {
-        "SPAname" : "home",
-        "SPAurl": "../",
-        "SPAtitle": "SPA APP | My Logic",
+        "SPAnameR" : "home",
+        "SPAurlR": "../",
+        "SPAtitleR": "SPA APP | My Logic",
         "Body": {
 
         }
     },
     {
-        "SPAname" : "customers",
-        "SPAurl": "customers",
-        "SPAtitle": "Customers",
+        "SPAnameR" : "customers",
+        "SPAurlR": "customers",
+        "SPAtitleR": "Customers",
         "Body": {
             
         }
     },
     {
-        "SPAname" : "links",
-        "SPAurl": "links",
-        "SPAtitle": "Links",
+        "SPAnameR" : "links",
+        "SPAurlR": "links",
+        "SPAtitleR": "Links",
         "Body": {
             
         }
     },
     {
-        "SPAname" : "notifications",
-        "SPAurl": "notifications",
-        "SPAtitle": "Notifications",
+        "SPAnameR" : "notifications",
+        "SPAurlR": "notifications",
+        "SPAtitleR": "Notifications",
         "Body": {
             
         }
