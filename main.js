@@ -1,4 +1,6 @@
-function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
+let contentBox = document.getElementById("SPAoutContent");
+
+function intContent(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
 
     let xhr = fetch(jsonpages);
     xhr.then((res)=>{
@@ -19,13 +21,23 @@ function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
             elements.forEach((ele, index)=>{
                 ele.addEventListener('click',()=>{
 
+                    let eleIndex = ""
+
                     // change title, url   regardless of pages or json file objects order
                     for(let dataI = 0; dataI<data.length ; dataI++){
                         if(data[dataI][SPAname] == ele.getAttribute("SPAname")){
                             document.title = data[dataI][SPAtitle];
                             window.history.pushState("","",data[dataI][SPAurl]);
+                            eleIndex = dataI;
                             break
                         }
+                    }
+
+
+                    contentBox.innerHTML = ``;
+
+                    for (i in data[eleIndex]["Body"]){
+                        contentBox.innerHTML += `${data[eleIndex]["Body"][i]}`
                     }
 
                     elements.forEach((eles)=>{
@@ -40,7 +52,23 @@ function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
     });
 }
 
-jsonRead("spa.json",["SPAname1", "SPAurl1", "SPAtitle1"]);
+function intHomeContent (jsonpages, homePageSPAname, keyName){
+    let xhr = fetch(jsonpages);
+    xhr.then((res)=>{
+        return res.json()
+    }).then((data)=>{
+        return data
+    }).then((data)=>{
+        for(let ind = 0; ind<data.length; ind++){
+            if(data[ind][keyName] == homePageSPAname){
+                for (item in data[ind]["Body"]){
+                    contentBox.innerHTML += `${data[ind]["Body"][item]}`;
+                }
+                break;
+            }
+        }
+    })
+}
 
-
-// You have a problem, many requests, to window.history.pushState  because looping on every element
+intContent("spa.json",["SPAname1", "SPAurl1", "SPAtitle1"],true);
+intHomeContent("spa.json","home","SPAname1");

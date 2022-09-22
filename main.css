@@ -4,6 +4,10 @@ html,body {
 body{
     position: sticky;
     top: 0;
+    margin: 0 10px !important;
+}
+*{
+    box-sizing: border-box !important;
 }
 
 :root{
@@ -16,6 +20,14 @@ body{
 .sideBar{
     margin-bottom: 0;
     height: 100vh;
+    top: 0;
+    position: sticky;
+}
+
+.link {
+    display: block;
+    font-size: 20px;
+    color: #00d1b2;
 }
 
 .columns:not(:last-child){
