@@ -1,4 +1,5 @@
-function jsonRead(jsonpages, metatagArr){
+function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
+
     let xhr = fetch(jsonpages);
     xhr.then((res)=>{
         return res.json()
@@ -19,11 +20,14 @@ function jsonRead(jsonpages, metatagArr){
                 ele.addEventListener('click',()=>{
 
                     // change title, url   regardless of pages or json file objects order
-                    data.forEach((item, dataI)=>{
+                    data.evry((item, dataI)=>{
                         if(data[dataI][SPAname] == ele.getAttribute("SPAname")){
                             document.title = data[dataI][SPAtitle];
                             window.history.pushState("","",data[dataI][SPAurl]);
+                            return false;
                         }
+                        console.log(1)
+                        return true;
                     })
 
                     elements.forEach((eles)=>{
@@ -38,9 +42,7 @@ function jsonRead(jsonpages, metatagArr){
     });
 }
 
-jsonRead("spa.json",["SPAnameR", "SPAurlR", "SPAtitleR"]);
+jsonRead("spa.json",["SPAname1", "SPAurl1", "SPAtitle1"]);
 
 
-
-
-
+// You have a problem, many requests, to window.history.pushState  because looping on every element
