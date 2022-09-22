@@ -20,7 +20,7 @@ function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
                 ele.addEventListener('click',()=>{
 
                     // change title, url   regardless of pages or json file objects order
-                    data.evry((item, dataI)=>{
+                    data.forEach((item, dataI)=>{
                         if(data[dataI][SPAname] == ele.getAttribute("SPAname")){
                             document.title = data[dataI][SPAtitle];
                             window.history.pushState("","",data[dataI][SPAurl]);
