@@ -20,15 +20,13 @@ function jsonRead(jsonpages, metatagArr = ["SPAname", "SPAurl", "SPAtitle"]){
                 ele.addEventListener('click',()=>{
 
                     // change title, url   regardless of pages or json file objects order
-                    data.forEach((item, dataI)=>{
+                    for(let dataI = 0; dataI<data.length ; dataI++){
                         if(data[dataI][SPAname] == ele.getAttribute("SPAname")){
                             document.title = data[dataI][SPAtitle];
                             window.history.pushState("","",data[dataI][SPAurl]);
-                            return false;
+                            break
                         }
-                        console.log(1)
-                        return true;
-                    })
+                    }
 
                     elements.forEach((eles)=>{
                         eles.classList.remove("is-active", "is-primary");
