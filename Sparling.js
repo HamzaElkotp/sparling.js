@@ -70,5 +70,3 @@ function intHomeContent (jsonpages, homePageSPAname, keyName){
     })
 }
 
-intContent("spa.json",["SPAname1", "SPAurl1", "SPAtitle1"],true);
-intHomeContent("spa.json","home","SPAname1");
