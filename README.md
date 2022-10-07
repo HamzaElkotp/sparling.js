@@ -1,4 +1,7 @@
-# Making Sparling.js Fundamentals 
+<p align="center">
+  <a href="#" target="blank"><img src="https://user-images.githubusercontent.com/61008779/194640320-6f956dec-052b-4d6e-b135-8e7ff1178e25.png" width="160" alt="Sparling Logo" /></a>
+</p>
+
 ## Main Logic:
 1- Sparling.js deals with a JSON file created by the developer, this JSON file contains an array inside of it there are Objects. 
 2- Sparling.js reads these objects and converts them to HTML elements that appear on the main HTML page
@@ -7,11 +10,13 @@
 
 4- every object contains main keys:
 
-- `SPAname` => name of the page, will see how to use it later.
+- `SPAname` => name of the page, will see how to use it later, also it's an HTML meta tag add it to the HTML element that want it to load a specific page when clicking and give it a value.
 
 - `SPAurl` => URL of the page, to change window URL to it.
 
 - `SPAtitle` => title of the page, to change window title to it.
+
+- `SPApush` => to select where you want the pege content load inside the html document, also it's an HTML meta tag add it to the HTML element that want the page load inside it and then give it a value, you can add it to `<body>` and give it value x.
 
 - `Body` => contains all page contents like p, h1, div.
 
